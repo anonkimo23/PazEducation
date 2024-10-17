@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Rol</title>
+    <link rel="stylesheet" href="Usuario.css">
+</head>
+<body>
+    <h1>Rol</h1>
+    <form action="/usuarios" method="POST">
+        <input type="hidden" id="id_rol" name="id_rol">
+        
+        <label for="nombre">Nombre Rol:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Nombre del Rol" required>
+
+        <label for="documento">Descripcion Rol:</label>
+        <input type="text" id="documento" name="documento" placeholder="Descripcion Rol" required>
+
+        <button type="submit">Guardar</button>
+    </form>
+    </body>
+    </html>

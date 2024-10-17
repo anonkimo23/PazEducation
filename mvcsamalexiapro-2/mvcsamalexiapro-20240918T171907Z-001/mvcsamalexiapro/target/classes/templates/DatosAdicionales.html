@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Datos</title>
+    <link rel="stylesheet" href="Usuario.css">
+</head>
+<body>
+    <h1>Datos</h1>
+    <form action="/usuarios" method="POST">
+        <input type="hidden" id="id_datos" name="id_datos">
+        
+        <label for="nombre">fecha de nacimiento:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="DD/MM/AA" required>
+
+        <label for="documento">EPS:</label>
+        <input type="text" id="documento" name="documento" placeholder="Servicio al que esta afiliado" required>
+
+        <label for="correo">grupo sanguineo:</label>
+        <input type="email" id="correo" name="correo" placeholder="A+,B+...." required>
+
+        <label for="correo">acudiente:</label>
+        <input type="email" id="correo" name="correo" placeholder="Nombre del Acudiente" required>
+        
+        <button type="submit">Guardar</button>
+
+    </form>
+    </body>
+    </html>

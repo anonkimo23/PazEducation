@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Observador</title>
+    <link rel="stylesheet" href="Usuario.css">
+</head>
+<body>
+    <h1>Observador</h1>
+    <form action="/usuarios" method="POST">
+        <input type="hidden" id="id_observacion" name="id_observacion">
+        
+        <label for="nombre">Docente:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Nombre del Docente" required>
+
+        <label for="documento">Tipo:</label>
+        <input type="text" id="documento" name="documento" placeholder="Academico/Convivencia" required>
+
+        <label for="correo">Fecha:</label>
+        <input type="email" id="correo" name="correo" placeholder="Fecha" required>
+
+        <label for="telefono">Descripcion:</label>
+        <input type="text" id="telefono" name="telefono" placeholder="Descripcion" required>
+
+        <button type="submit">Guardar</button>
+    </form>
+    </body>
+    </html>

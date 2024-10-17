@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Materia</title>
+    <link rel="stylesheet" href="Usuario.css">
+</head>
+<body>
+    <h1>Materia</h1>
+    <form action="/usuarios" method="POST">
+        <input type="hidden" id="id_materia" name="id_materia">
+        
+        <label for="nombre">Area:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Area a la que pertenece" required>
+
+        <label for="documento">Materia:</label>
+        <input type="text" id="documento" name="documento" placeholder="Materia" required>
+
+        <label for="correo">Intensidad Horaria:</label>
+        <input type="email" id="correo" name="correo" placeholder="Horas a la Semana" required>
+        
+        <button type="submit">Guardar</button>
+
+    </form>
+    </body>
+    </html>

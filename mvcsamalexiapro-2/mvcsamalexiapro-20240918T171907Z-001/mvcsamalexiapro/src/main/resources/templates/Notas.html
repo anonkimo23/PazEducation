@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Notas</title>
+    <link rel="stylesheet" href="Usuario.css">
+</head>
+<body>
+    <h1>Notas</h1>
+    <form action="/usuarios" method="POST">
+        <input type="hidden" id="id_nota" name="id_nota">
+        
+        <label for="nombre">Calificacion:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Juicio Evaluativo" required>
+
+        <label for="documento">Fecha:</label>
+        <input type="text" id="documento" name="documento" placeholder="Jornada diuna o nocturna" required>
+        
+        
+        <label for="documento">Estado:</label>
+        <input type="text" id="documento" name="documento" placeholder="Aprobado o Desaprobado" required>
+
+        
+        <label for="documento">Periodo:</label>
+        <input type="text" id="documento" name="documento" placeholder="Periodo" required>
+
+        
+        <label for="documento">Descripcion:</label>
+        <input type="text" id="documento" name="documento" placeholder="Motivo de la Nota" required>
+
+        <button type="submit">Guardar</button>
+
+    </form>
+    </body>
+    </html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Curso</title>
+    <link rel="stylesheet" href="Usuario.css">
+</head>
+<body>
+    <h1>Curso</h1>
+    <form action="/usuarios" method="POST">
+        <input type="hidden" id="id_curso" name="id_curso">
+        
+        <label for="nombre">Curso:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Curso" required>
+
+        <label for="documento">Descripcion:</label>
+        <input type="text" id="documento" name="documento" placeholder="Jornada diuna o nocturna" required>
+
+        <button type="submit">Guardar</button>
+
+    </form>
+    </body>
+    </html>

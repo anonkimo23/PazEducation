@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de Usuarios</title>
+    <link rel="stylesheet" href="/CSS/Tabla.css"> <!-- Asegúrate de que el archivo CSS esté en esta ruta -->
+</head>
+<body>
+    <h1>Lista de Usuarios</h1>
+    <div class="button-container">
+        <a href="/usuario/nuevoUsuario" class="btn-add">Añadir Usuario</a>
+    </div>
+
+    <table border="1">
+        <thead>
+            <tr>
+               
+                <th>Nombre</th>
+                <th>Documento</th>
+                <th>Correo</th>
+                <th>Teléfono</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="usuario : ${usuarios}">
+               
+                <td th:text="${usuario.nombre}"></td>
+                <td th:text="${usuario.documento}"></td>
+                <td th:text="${usuario.correo}"></td>
+                <td th:text="${usuario.telefono}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
