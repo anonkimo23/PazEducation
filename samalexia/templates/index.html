@@ -1,0 +1,251 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Web - Header</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header class="header">
+      
+        <div class="top-line">
+            <div class="header-logo">
+                <img src="{% static 'image/logo.png' %}" alt="Logo" class="logo-img">
+            </div>
+            <div class="header-phrase">
+                - FORMAMOS LÍDERES COMUNITARIOS A TRAVÉS DE VALORES -
+            </div>
+        </div>
+
+        
+        <div class="header-bottom">
+            <div class="tag-preescolar">
+                Preescolar
+            </div>
+
+
+            <div class="header-buttons">
+                <button>Notas</button>
+                <button>Observador</button>
+                <button>Manual de convivencia</button>
+            </div>
+
+
+            <div class="user-profile">
+                <div class="profile-picture">
+                    <img src="{% static 'image/logo.png' %}" alt="Perfil">
+                </div>
+                <div class="profile-info">
+                    <span>Nombre Apellido</span><br>
+                    <span>Curso</span>
+                </div>
+            </div>
+        </div>
+
+    <script>
+
+        window.onload = function() {
+            const tagPreescolar = document.querySelector('.tag-preescolar');
+
+            tagPreescolar.style.animation = 'slideInLeftStraight 1s ease-out forwards';
+        };
+    </script>
+    </header>
+
+
+
+
+<div class="menu-circular" onclick="toggleMenu()">
+    <div class="hamburger"></div>
+</div>
+
+
+<ul class="menu" id="menu">
+    <li><a href="#"><i class="icon-home"></i> Home</a></li>
+    <li><a href="#"><i class="icon-info"></i> Información</a></li>
+    <li><a href="#"><i class="icon-event"></i> Eventos</a></li>
+    <li><a href="#"><i class="icon-manual"></i> Manual de convivencia</a></li>
+    <li><a href="#"><i class="icon-observador"></i> Observador</a></li>
+    <li><a href="#"><i class="icon-notas"></i> Notas</a></li>
+    <li><a href="#"><i class="icon-perfil"></i> Perfil</a></li>
+    <li><a href="#"><i class="icon-close"></i> Cerrar sesión</a></li>
+    <li><a href="#"><i class="icon-facebook"></i> Facebook</a></li>
+    <li><a href="#"><i class="icon-instagram"></i> Instagram</a></li>
+    <li><a href="#"><i class="icon-contact"></i> Contactos</a></li>
+</ul>
+
+<script>
+    function toggleMenu() {
+    const menuCircular = document.querySelector('.menu-circular');
+    const menu = document.querySelector('.menu');
+    menuCircular.classList.toggle('active');
+    menu.classList.toggle('active');
+
+
+    if (menuCircular.classList.contains('active')) {
+        menuCircular.style.opacity = '1'; 
+    } else {
+        menuCircular.style.opacity = '1';
+        }
+    }
+</script>
+
+<h1 class="title">Eventos</h1>
+<h2 class="subtitle">Escolares</h2>
+
+    <div class="container">
+
+        <div class="line3b4037">
+
+        </div>
+
+
+        <main class="main-content">
+            <div class="content-box">
+                <div class="image-collage">
+
+                </div>
+                <p>Descripción del evento...</p>
+            </div>
+        
+            <div class="content-box">
+                <div class="image-collage">
+
+                </div>
+                <p>Descripción del evento...</p>
+            </div>
+        
+            <div class="content-box">
+                <div class="image-collage">
+
+                </div>
+                <p>Descripción del evento...</p>
+            </div>
+        
+            <div class="content-box">
+                <div class="image-collage">
+
+                </div>
+                <p>Descripción del evento...</p>
+            </div>
+        </main>
+        
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const contentBoxes = document.querySelectorAll('.content-box');
+                const imageCollages = document.querySelectorAll('.image-collage');
+                const paragraphs = document.querySelectorAll('p');
+        
+                const options = {
+                    root: null, 
+                    rootMargin: "0px",
+                    threshold: 0.5 
+                };
+        
+                const observer = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add('visible');
+                        } else {
+
+                            entry.target.classList.remove('visible');
+                        }
+                    });
+                }, options);
+        
+                contentBoxes.forEach(box => observer.observe(box));
+                imageCollages.forEach(collage => observer.observe(collage));
+                paragraphs.forEach(paragraph => observer.observe(paragraph));
+            });
+        </script>
+
+
+
+
+
+        <aside class="sidebar-right">
+            <h2 class="sidebar-title">Horario</h2>
+            <hr class="separator">
+            <table class="schedule">
+                <tr>
+                    <th>Hora</th>
+                    <th>Actividad</th>
+                </tr>
+                <tr>
+                    <td>7:00-7:15</td>
+                    <td>Recepción y Organización</td>
+                </tr>
+                <tr>
+                    <td>7:15-8:00</td>
+                    <td>Matemáticas</td>
+                </tr>
+                <tr>
+                    <td>8:00-8:45</td>
+                    <td>Lenguaje</td>
+                </tr>
+                <tr>
+                    <td>8:45-9:30</td>
+                    <td>Ciencias Naturales</td>
+                </tr>
+                <tr>
+                    <td>9:30-10:00</td>
+                    <td>Recreo</td>
+                </tr>
+                <tr>
+                    <td>10:00-10:45</td>
+                    <td>Sociales (Historia y Geografía)</td>
+                </tr>
+                <tr>
+                    <td>10:45-11:30</td>
+                    <td>Inglés</td>
+                </tr>
+                <tr>
+                    <td>11:30-12:15</td>
+                    <td>Educación Artística (Música, Dibujo)</td>
+                </tr>
+                <tr>
+                    <td>12:15-1:15</td>
+                    <td>Almuerzo</td>
+                </tr>
+                <tr>
+                    <td>1:15-2:00</td>
+                    <td>Educación Física</td>
+                </tr>
+                <tr>
+                    <td>2:00-2:45</td>
+                    <td>Religión o Ética</td>
+                </tr>
+                <tr>
+                    <td>2:45-3:30</td>
+                    <td>Computación o Tecnología</td>
+                </tr>
+                <tr>
+                    <td>3:30-4:00</td>
+                    <td>Recreo</td>
+                </tr>
+                <tr>
+                    <td>4:00-4:45</td>
+                    <td>Refuerzo de tareas o Actividades Lúdicas</td>
+                </tr>
+            </table>
+        </aside>
+    </div>
+    <footer class="footer">
+        <div class="footer-left">
+            <p>Pie de página</p>
+            <p>Información adicional...</p>
+        </div>
+        <div class="footer-right">
+            <p>Contactos</p>
+            <p>Email: correo@ejemplo.com</p>
+            <p>Teléfono: 300000000</p>
+            <p>Redes sociales: @usuario</p>
+        </div>
+    </footer>
+</body>
+</html>
+</body>
+</html>
