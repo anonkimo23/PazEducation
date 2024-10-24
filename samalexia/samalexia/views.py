@@ -8,3 +8,7 @@ def login(request):
     return render(request,'login.html',{
         #context
     })
+def landingPage(request):
+    return render(request,'landingPage.html',{
+        #context
+    })

@@ -10,25 +10,24 @@
 </head>
 <body>
     <header class="header">
-        <div class="top-line">
-            <div class="header-logo">
-                <img src="{% static 'image/sinFondo.png' %}" alt="Logo" class="logo-img">
-            </div>
+        <div class="header-content slide-down">
+            <h1 class="header-h1">FUNDACIÓN LA PAZ</h1>
+            <p class="header-p">- Formamos líderes comunitarios a través de valores -</p>
         </div>
-        <div class="header-phrase">
-            <h1>Colegio Fundación la paz</h1>
-            <p>- Formamos líderes comunitarios a través de valores  -</p>
+        <div class="header-logo slide-down">
+            <img class="img" src="{% static 'image/sinFondo.png' %}" alt="Logo Fundación La Paz">
         </div>
     </header>
-</body>
+    <link rel="stylesheet" href="{% static 'js/login.js' %}">
 
 <main> 
-    <div class="login-container"></divclass>>
+    <div class="login-container"> 
+
         <div class="login-box">
             <div class="login-logo">
                 <img src="{% static 'image/sinFondo.png' %}" alt="Logo Fundación La Paz">
             </div>
-            <h2>Inicio De Sesión</h2>
+            <h2 class="header-h2">Inicio De Sesión</h2>
             <form>
                 <div class="input-group">
                     <i class="fas fa-user"></i>
@@ -44,4 +43,17 @@
         </div>
     </div>
 </main>
+<footer class="footer">
+    <div class="footer-left">
+        <p>Pie de página</p>
+        <p>Información adicional...</p>
+    </div>
+    <div class="footer-right">
+        <p>Contactos</p>
+        <p>Email: correo@ejemplo.com</p>
+        <p>Teléfono: 300000000</p>
+        <p>Redes sociales: @usuario</p>
+    </div>
+</footer>
+</body>
 </html>

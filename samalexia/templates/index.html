@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Web - Header</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/index.js' %}"></script>
+
 </head>
 <body>
     <header class="header">
-      
         <div class="top-line">
             <div class="header-logo">
                 <img src="{% static 'image/sinFondo.png' %}" alt="Logo" class="logo-img">
@@ -43,15 +44,6 @@
                 </div>
             </div>
         </div>
-
-    <script>
-
-        window.onload = function() {
-            const tagPreescolar = document.querySelector('.tag-preescolar');
-
-            tagPreescolar.style.animation = 'slideInLeftStraight 1s ease-out forwards';
-        };
-    </script>
     </header>
 
 
@@ -75,23 +67,6 @@
     <li><a href="#"><i class="icon-instagram"></i> Instagram</a></li>
     <li><a href="#"><i class="icon-contact"></i> Contactos</a></li>
 </ul>
-
-<script>
-    function toggleMenu() {
-    const menuCircular = document.querySelector('.menu-circular');
-    const menu = document.querySelector('.menu');
-    menuCircular.classList.toggle('active');
-    menu.classList.toggle('active');
-
-
-    if (menuCircular.classList.contains('active')) {
-        menuCircular.style.opacity = '1'; 
-    } else {
-        menuCircular.style.opacity = '1';
-        }
-    }
-</script>
-
 <h1 class="title">Eventos</h1>
 <h2 class="subtitle">Escolares</h2>
 
@@ -131,41 +106,6 @@
                 <p>Descripción del evento...</p>
             </div>
         </main>
-        
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                const contentBoxes = document.querySelectorAll('.content-box');
-                const imageCollages = document.querySelectorAll('.image-collage');
-                const paragraphs = document.querySelectorAll('p');
-        
-                const options = {
-                    root: null, 
-                    rootMargin: "0px",
-                    threshold: 0.5 
-                };
-        
-                const observer = new IntersectionObserver((entries, observer) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-
-                            entry.target.classList.add('visible');
-                        } else {
-
-                            entry.target.classList.remove('visible');
-                        }
-                    });
-                }, options);
-        
-                contentBoxes.forEach(box => observer.observe(box));
-                imageCollages.forEach(collage => observer.observe(collage));
-                paragraphs.forEach(paragraph => observer.observe(paragraph));
-            });
-        </script>
-
-
-
-
-
         <aside class="sidebar-right">
             <h2 class="sidebar-title">Horario</h2>
             <hr class="separator">

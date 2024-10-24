@@ -1,65 +1,114 @@
+/* Header */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Times New Roman", serif;
 }
 
 body {
-    background-color: gray;
+    font-family: Arial, sans-serif;
+    background-color: #d4d4d4;
+    background-image: url('../image/inicioSesion.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
+        /* Estilos del header */
+        .header {
+            background-color: #f4f4f4;
+            position: relative;
+            width: 100%;
+            padding: 0px 0px 30px 0px;
+            text-align: center;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-.header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #ffff; 
-    border-bottom: 2px solid #e0e0e0;
-        position: relative;
-        width: 100%;
-        height: 180px;
+        /* Animación de entrada desde arriba */
+        .slide-down {
+            animation: slideDown 1s ease-out forwards;
+        }
 
-}
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100px); /* Comienza desde arriba */
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0); /* Se desliza hasta su posición original */
+                opacity: 1;
+            }
+        }
 
-.header-logo {
-    background-color: #3b4037;
-    width: 100%;
-    padding: 100px 0px 0px 0px;
-    border-radius: 80px;
-    display: flex;
-    flex-direction: column;
-    
-    align-items: self-start;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.233);
-  }
-  
-  .logo-img {
-    border-radius: 50%;
-    width: 230px;
-    height: 230px;
-    margin-bottom: 20px;
-  }
-  
-.header-phrase {
-    text-align: center;
-}
+        /* Caja del logo */
+        .header-logo {
+            background-color: #3b4037;
+            width: 250px;
+            height: 200px;
+            padding: 10px 0 0 0;
+            border-radius: 0px 0px 50px 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 
-.header-content h1 {
-    font-size: 46px;
-    font-weight: bold;
-    color: #333;
-    margin-right: 200px;
-}
+            /* Posicionar fijo en la parte superior */
+            position: relative; 
 
-.header-content p {
-    font-size: 38px;
-    color: #666;
-    letter-spacing: 2px;
-    margin-top: 5px;
-    margin-right: 200px;
+            left: -1200px; /* Ajustar este valor si necesitas más o menos margen a la izquierda */
+        }
 
-}
+        /* Estilos de la imagen del logo */
+        .logo-img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            margin-bottom: 20px;
+        }
+        .img{
+            width:220px ;
+            height: 220px;
+        }
 
+        /* Estilos del texto */
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+
+        }
+        .header-h1 {
+            font-size: 40px; /* Aumentar el tamaño de la fuente */
+            color: #000000;
+            letter-spacing: 5px; /* Espaciado entre letras */
+            text-transform: uppercase;
+            width: 100%; /* Ancho mayor para ocupar más espacio horizontal */
+            margin-left: 250px; /* Ajustar la distancia del texto desde la izquierda */
+            font-family: 'Georgia', serif;   
+        }
+        .header-h2{
+            font-family: 'Georgia', serif;
+        }
+
+        .header-p {
+            padding: 0px;
+            font-size: 25px; /* Aumentar el tamaño de la fuente del subtítulo */
+            color: #000000;
+            letter-spacing: 8px; /* Espaciado entre letras */
+            width: 100%; /* Ancho mayor para ocupar más espacio horizontal */
+            margin: 10px 0px 0px 280px;
+            font-family: 'Georgia', serif; /* Ajustar la distancia del texto desde la izquierda */
+        }
+
+        /* Hacer que el texto también se deslice hacia abajo */
+        .header-content {
+            opacity: 0; /* Inicia invisible */
+        }
 /*------------MAIN----------------------------*/
 main {
     height: 100vh;
@@ -69,6 +118,7 @@ main {
     background-image: url('/Img/fondo.jpg'); /* Coloca aquí la imagen de fondo */
     background-size: cover;
     background-position: center;
+    background: #33333387;
 }
 
 .login-container {
@@ -77,8 +127,8 @@ main {
     align-items: center;
     width: 100%;
     height: 100%;
-    background: #33333387; /* Fondo semitransparente */
     padding: 20px;
+    margin-bottom: 300px;
 }
 
 .login-box {
@@ -144,5 +194,35 @@ button {
 }
 
 button:hover {
-    background-color: #8a2be2;
+    background-color: #000000;
 }
+
+  .footer {
+    background-color: white;
+    padding: 70px 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #d4d4d4;
+    position: relative;
+    bottom: 0; /* Puedes eliminar esto si el footer está en el flujo normal del documento */
+    width: 100%;
+    z-index: 1; /* Asegúrate de que el footer esté por encima de otros elementos */
+}
+
+  
+  
+  
+  .footer-left p,
+  .footer-right p {
+    margin: 5px 0;
+    color: #3b4037;
+    font-size: 20px;
+  }
+  
+  .footer-right p {
+    text-align: right;
+  }
+
+  
+  

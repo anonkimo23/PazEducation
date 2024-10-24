@@ -1,0 +1,512 @@
+/* Header */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #d4d4d4;
+}
+
+.header {
+    position: relative;
+    width: 100%;
+    height: 420px; 
+    background-image: url(img/Alumnos.jpg);
+    background-size: cover;
+}
+
+.top-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(59, 64, 55, 0.74);
+    color: white;
+    border-radius: 0 0 50px 0;
+    width: 98%;
+    height: 25%;
+    padding: 0px 75px;
+}
+
+.header-logo {
+    background-color: #3b4037;
+    width: 250px;
+    padding: 170px 0 0; 
+    border-radius: 50px;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: flex-end; 
+    align-items: center; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.671);
+}
+
+.logo-img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px; 
+}
+
+.header-phrase {
+    font-weight: bold;
+    font-size: 17px;
+    font-family: serif;
+    letter-spacing: 7px;
+    padding: 0px 17px;
+}
+
+.header-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.705);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 28%;
+    padding: 0px 150px 0px 0px; /* Espaciado alrededor del contenido */
+}
+
+.tag-preescolar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    font-weight: 700;
+    font-size: 45px;
+    background-color: #3b4037;
+    color: white;
+    clip-path: polygon(0% 0%, 80% 0%, 80% 0%, 90% 50%, 80% 100%, 80% 100%, 0% 100%);
+    width: 25%;
+    height: 118px;
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+@keyframes slideInLeftStraight {
+    0% {
+        transform: translateX(-100%); 
+        opacity: 0; 
+    }
+    100% {
+        transform: translateX(0); 
+        opacity: 1; 
+    }
+}
+
+.search-container {
+    position: relative;
+    width: 550px;
+    margin-right: 150px; /* Mover la barra de bÃºsqueda a la izquierda */
+}
+
+.search-box {
+    width: 100%;
+    padding: 10px 40px;
+    border: 2px solid #3b4037;
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.322);
+    font-size: 16px;
+    outline: none;
+    transition: width 0.4s ease-in-out;
+}
+
+.search-box:focus {
+    width: 700px;
+}
+
+.search-box::placeholder {
+    color: #555;
+}
+
+.search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px; /* TamaÃ±o reducido */
+    height: 16px; /* TamaÃ±o reducido */
+    border: 2px solid #3b4037;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.4s ease;
+}
+
+.search-icon::before {
+    content: '';
+    position: absolute;
+    width: 6px; /* TamaÃ±o reducido */
+    height: 2px;
+    background-color:#3b4037;
+    transform: rotate(45deg);
+    bottom: -3px; /* Ajustado para que quede bien proporcional */
+    right: -3px; /* Ajustado para que quede bien proporcional */
+}
+
+.search-box:focus + .search-icon {
+    opacity: 0;
+}
+
+/* AnimaciÃ³n para hacer desaparecer la lupa */
+.search-box:focus + .search-icon {
+    transition: opacity 0.6s ease;
+}
+
+.header-buttons {
+    display: flex;
+    gap: 25px; /* Espaciado entre los botones */
+    margin-left: 20px; /* Mueve los botones un poco hacia la izquierda */
+}
+
+.header-button {
+    background-color: #3b4037;
+    color: white;
+    padding: 5px 50px; 
+    border-radius: 30px;
+    border: none;
+    text-decoration: underline;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.521);
+}
+
+.header-buttons button:hover {
+    background-color: #3b4037;
+}
+
+
+/*Menu*/
+
+.menu-circular {
+    width: 100px;
+    height: 100px;
+    background-color: #3b403700;
+    border-radius: 50%;
+    position: absolute; 
+    left: 20px;
+    top: 310px; 
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: opacity 0.3s ease-in-out;
+    cursor: pointer; /* Cambiar cursor al pasar sobre el botÃ³n */
+}
+
+
+.hamburger {
+    position: absolute;
+    width: 45px;
+    height: 6px;
+    background-color: rgb(255, 255, 255);
+    transition: 0.3s;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    width: 45px;
+    height: 6px;
+    background-color: rgb(255, 255, 255);
+    transition: 0.3s;
+}
+
+.hamburger::before {
+    top: -15px;
+}
+
+.hamburger::after {
+    top: 15px;
+}
+
+
+.menu {
+    width: 250px;
+    display: none;
+    position: absolute; 
+    top: 425px; 
+    height: 85%;
+    background-color: #3b4037;
+    list-style: none;
+    padding: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.507);
+    opacity: 0;
+    transform: translateX(-100%);
+    z-index: 800;
+}
+
+.menu.active {
+    display: block;
+    animation: slideIn 1s ease forwards;
+}
+
+
+@keyframes slideIn {
+    0% {
+    opacity: 0;
+    transform: translateX(-100%);
+    }
+    50% {
+    opacity: 0.5;
+    transform: translateX(0%);
+    }
+    80% {
+    opacity: 1;
+    transform: translateX(-3%);
+    }
+    100% {
+    opacity: 1;
+    transform: translateX(0);
+    }
+}
+
+.menu li {
+    display: flex;
+    align-items: center;
+    margin: 40px 0;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    transition: background-color 0.3s;
+}
+
+.menu li a:hover {
+    background-color: #565d4b;
+}
+
+.menu li a i {
+    margin-right: 0px;
+    font-size: 20px;
+}
+
+
+.menu-circular.active .hamburger {
+    background-color: transparent;
+}
+
+.menu-circular.active .hamburger::before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.menu-circular.active .hamburger::after {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+
+.menu-circular.active ~ .menu {
+    display: block;
+}
+
+
+
+/*body*/
+
+
+.container {
+    display: flex;
+    margin-top: 20px  ;
+}
+
+.title {
+font-size: 65px;
+color: #8e7858;
+padding: 0px 0px 0px 5%;
+font-weight: 900;
+}
+
+.subtitle {
+font-size: 35px;
+color: black;
+font-weight: bold;
+padding: 10px 0px 0px 5%;
+}
+
+.main-content {
+flex-grow: 1;
+padding: 0px 330px 0px 50px;
+}
+
+.content-box {
+background-color: white;
+border-radius: 3px;
+margin-bottom: 5%;
+padding: 80px;
+box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+opacity: 0;
+transform: translateY(100px); 
+transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.content-box.visible {
+opacity: 1;
+transform: translateY(0);
+animation: bounce 0.5s ease-out; 
+}
+
+@keyframes bounce {
+0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+}
+40% {
+    transform: translateY(-10px);
+}
+60% {
+    transform: translateY(-5px);
+}
+}
+
+.image-collage {
+height: 150px;
+background-color: #f0f0f0;
+border-radius: 10px;
+margin-bottom: 10px;
+opacity: 0;
+transform: scale(0.95);
+transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.image-collage.visible {
+opacity: 1;
+transform: scale(1);
+animation: scaleUp 0.5s ease-out; 
+}
+
+
+@keyframes scaleUp {
+    0% {
+        transform: scale(0.95);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+p {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+p.visible {
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeIn 0.5s ease-out; 
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+.sidebar-right {
+    width: 300px;
+    height: 1000px;
+    background-color: #3b4037;
+    color: white;
+    border-radius: 50px 0 0 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.507);
+    position: absolute; 
+    right: 0; /* Alinea al borde derecho de la pantalla */
+    top: 450px; /* Alinea al borde superior de la pantalla */
+  }
+  
+.sidebar-title {
+    font-size: 30px;
+    padding: 60px 30px 30px 30px;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.separator {
+    background-color: white;
+    width: 300px;
+    height: 5px;
+    border: none;
+    margin: 10px 0;
+}
+
+.sidebar-subtitle {
+    font-size: 23px;
+    padding: 30px 10px 10px 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.listas {
+    font-size: 20px;
+    padding: 0 0 30px 65px; /* Ajusta el padding para alinearlo a la izquierda */
+    font-weight: bold;
+}
+
+.listas li {
+    margin-bottom: 10px;
+}
+
+.listas2 {
+    font-size: 20px;
+    padding: 0 0 30px 65px; /* Ajusta el padding para alinearlo a la izquierda */
+    font-weight: 300;
+    letter-spacing: 2px;
+}
+
+.listas2 li {
+    margin-bottom: 10px;
+}
+
+.a {
+    font-size: 20px;
+    padding: 0 0 30px 100px; /* Ajusta el padding para alinearlo a la izquierda */
+    font-weight: 300;
+}
+
+
+/*footer*/
+
+.footer {
+    background-color: white;
+    padding: 70px 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #d4d4d4;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 70px; 
+}
+
+.footer-left p, .footer-right p {
+    margin: 5px 0;
+    color: #3b4037;
+    font-size: 20px;
+}
+.footer-right p {
+    text-align: right;
+}

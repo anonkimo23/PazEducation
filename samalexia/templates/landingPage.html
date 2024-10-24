@@ -1,0 +1,171 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/landing.css' %}">
+    <script src="{% static 'js/index.js' %}"></script>
+    <title>Home</title>
+</head>
+<body>
+    <header class="header">
+        <div class="top-line">
+            <div class="header-logo">
+                <img src="img/logo.jpg" alt="Logo" class="logo-img">
+            </div>
+            <div class="header-phrase">
+                - FORMAMOS LÍDERES COMUNITARIOS A TRAVÉS DE VALORES -
+            </div>
+        </div>
+
+        <div class="header-bottom">
+            <div class="tag-preescolar"></div>
+
+            <div class="search-container">
+                <input type="text" class="search-box" placeholder="Buscar...">
+                <div class="search-icon"></div>
+            </div>
+
+            <div class="header-buttons">
+                <button class="header-button">Inicio de <br> sesión</button>
+                <button class="header-button">Registrarse</button>
+            </div>            
+        </div>
+
+        <script>
+            window.onload = function() {
+                const tagPreescolar = document.querySelector('.tag-preescolar');
+                tagPreescolar.style.animation = 'slideInLeftStraight 1s ease-out forwards';
+            };
+        </script>
+    </header>
+    
+
+    
+<div class="menu-circular" onclick="toggleMenu()">
+    <div class="hamburger"></div>
+</div>
+
+
+<ul class="menu" id="menu">
+    <li><a href="#"><i class="icon-home"></i> Home</a></li>
+    <li><a href="#"><i class="icon-info"></i> Información</a></li>
+    <li><a href="#"><i class="icon-event"></i> Eventos</a></li>
+    <li><a href="#"><i class="icon-manual"></i> Manual de convivencia</a></li>
+    <li><a href="#"><i class="icon-notas"></i> Iniciar sesion</a></li>
+    <li><a href="#"><i class="icon-perfil"></i> Reguistrarce</a></li>
+    <li><a href="#"><i class="icon-facebook"></i> Facebook</a></li>
+    <li><a href="#"><i class="icon-instagram"></i> Instagram</a></li>
+    <li><a href="#"><i class="icon-contact"></i> Contactos</a></li>
+</ul>
+
+<script>
+    function toggleMenu() {
+    const menuCircular = document.querySelector('.menu-circular');
+    const menu = document.querySelector('.menu');
+    menuCircular.classList.toggle('active');
+    menu.classList.toggle('active');
+
+
+    if (menuCircular.classList.contains('active')) {
+        menuCircular.style.opacity = '1'; 
+    } else {
+        menuCircular.style.opacity = '1';
+        }
+    }
+</script>
+
+<h1 class="title">COLEGIO <br>FUNDACIÓN LA PAZ </h1>
+<h2 class="subtitle">institución educativa</h2>
+<aside class="sidebar-right">
+    <h2 class="sidebar-title">INFORMACIÓN<br>ACADÉMICA</h2>
+    <hr class="separator">
+    <h3 class="sidebar-subtitle">Niveles de educación:</h3>
+    <ul class="listas">
+        <li> Preescolar</li>
+        <li> Básica primaria</li>
+    </ul>
+    <hr class="separator">
+    <h3 class="sidebar-subtitle">Grados académicos:</h3>
+    <ul class="listas2">
+        <li>Quinto</li>
+        <li>Cuarto</li>
+        <li>Tercero</li>
+        <li>Segundo</li>
+        <li>Primero</li>
+        <li>Transición</li>
+        <li>Jardín</li>
+    </ul>
+    <hr class="separator">
+    <h3 class="sidebar-subtitle">Jornadas de estudio:</h3>
+    <a class="a">Completa</a>
+</aside>
+    <div class="container">
+
+        <main class="main-content">
+            <div class="content-box">
+                <div class="image-collage">
+
+                </div>
+                <p>Descripción del evento...</p>
+            </div>
+        
+            <div class="content-box">
+                <div class="image-collage">
+
+                </div>
+                <p>Descripción del evento...</p>
+            </div>
+        
+        </main>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const contentBoxes = document.querySelectorAll('.content-box');
+                const imageCollages = document.querySelectorAll('.image-collage');
+                const paragraphs = document.querySelectorAll('p');
+        
+                const options = {
+                    root: null, 
+                    rootMargin: "0px",
+                    threshold: 0.5 
+                };
+        
+                const observer = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add('visible');
+                        } else {
+
+                            entry.target.classList.remove('visible');
+                        }
+                    });
+                }, options);
+        
+                contentBoxes.forEach(box => observer.observe(box));
+                imageCollages.forEach(collage => observer.observe(collage));
+                paragraphs.forEach(paragraph => observer.observe(paragraph));
+            });
+        </script>
+
+
+
+
+    </div>
+
+    
+    <footer class="footer">
+        <div class="footer-left">
+            <p>Pie de página</p>
+            <p>Información adicional...</p>
+        </div>
+        <div class="footer-right">
+            <p>Contactos</p>
+            <p>Email: correo@ejemplo.com</p>
+            <p>Teléfono: 300000000</p>
+            <p>Redes sociales: @usuario</p>
+        </div>
+    </footer>
+</body>
+</html>
